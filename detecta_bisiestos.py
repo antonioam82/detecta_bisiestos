@@ -2,10 +2,21 @@ from datetime import date
 from VALID import opt, ns, OKI
 import subprocess
 
-def año_val(n):
-    while n<1 or n>9999:
-        n=OKI(input("Año no válido: "))
-    return n
+def rang_año():
+    while True:
+        rang=input("Escriba los años del rango separados por coma: ")
+        defe=rang.split(",")
+        try:
+            co=[]
+            co.append(int(defe[0]))
+            co.append(int(defe[1]))
+            co.sort()
+        except:
+            continue
+        if (",") in rang and not (" ") in defe and co[0]>=1 and co[1]<=9999:
+            return co
+            break
+        
     
 while True:
     print("DETECTA-BISIESTOS")
@@ -13,13 +24,8 @@ while True:
     print("A)AÑOS BISIESTOS Y NO BISIESTOS")
     print("B)SOLO AÑOS BISIESTOS")
     print("C)SOLO AÑOS NO BISIESTOS")
-    rang=[]
     op=opt(input("Introduzca aquí su opción: "),["A","B","C"])
-    año1=año_val(OKI(input("Primer año del rango: ")))
-    rang.append(año1)
-    año2=año_val(OKI(input("Segundo año del rango: ")))
-    rang.append(año2)
-    rang.sort()
+    rang=rang_año()
     numan=0
     for i in range(int(rang[0]),(int(rang[1]))+1):
         if i==9999:
