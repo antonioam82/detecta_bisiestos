@@ -11,10 +11,10 @@ def rang_año():
             co.sort()
         except:
             continue
-        if (",") in rang and not (" ") in defe and co[0]>=1 and co[1]<=9999:
+        if co[0]>=1 and co[1]<=9999:
             return co
             break
-        
+        print("RECUERDE QUE EL RANGO HA DE ESTAR ENTRE 1 Y 9999 (AMBOS INCLUIDOS)",chr(7))
     
 while True:
     print("DETECTA-BISIESTOS")
@@ -51,6 +51,7 @@ while True:
             if op==("A"):
                 if numdias==366:
                      print("El año",i,"es bisiesto")
+                     numan+=1
                 else:
                     print("El año",i,"no es bisiesto")
             else:
@@ -62,6 +63,8 @@ while True:
                     numan+=1
         if numan==0 and (op=="B" or op=="C"):
             print("NO HAY AÑOS")
+        if op==("A"):
+            print("En el rango especificado hay",numan,"años bisiestos")
     conti=ns(input("¿Desa continuar?: "))
     if conti==("n"):
         break
