@@ -64,7 +64,7 @@ while True:
         if numan==0 and (op=="B" or op=="C"):
             print("NO HAY AÑOS")
         if op==("A"):
-            print("En el rango especificado hay",numan,"años bisiestos")
+            print(("Entre %d y %d hay %d años bisiestos")%(rang[0],rang[1],numan))
     conti=ns(input("¿Desa continuar?: "))
     if conti==("n"):
         break
