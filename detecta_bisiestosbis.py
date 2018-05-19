@@ -1,4 +1,4 @@
-#DETECTOS DE BISIESTOS SIN HACER USO DE "datetime"
+#DETECTOS DE BISIESTOS SIN HACER USO DE "datetime" (NO TERMINADO)
 from VALID import opt, ns, OKI
 import subprocess
 
@@ -25,23 +25,37 @@ while True:
     if op==("D"):
         año=OKI(input("Indique año: "))
         resto=año%4
-        if resto==0:
-            print("El año",año,"es bisiesto")
+        restp=año%400
+        if año%100==0:
+            if resto==0 and resp==0:
+                print("El año",año,"es bisisesto")
+            else:
+                print("El año",año,"no es bisiesto")
         else:
-            print("El año",año,"no es bisiesto")
+           if resto==0:
+               print("El año",año,"es bisiesto")
+           else:
+               print("El año",año,"no es bisiesto")
     else:
         rang=rang_año()
         numan=0
         for i in range(int(rang[0]),(int(rang[1]))+1):
             resto=i%4
+            restp=i%400
             if op==("A"):
-                if resto==0:
-                     print("El año",i,"es bisiesto")
-                     numan+=1
+                if i%100==0:
+                    if resto==0 and restp==0:
+                        print("El año",i,"es bisiesto")
+                    else:
+                        print("El año",i,"no es bisiesto")
                 else:
-                    print("El año",i,"no es bisiesto")
+                    if resto==0:
+                        print("El año",i,"es bisiesto")
+                        numan+=1
+                    else:
+                        print("El año",i,"no es bisiesto")
             else:
-                if op==("B") and resto==0:
+                if op==("B") and resto==0:##################################
                     print(i)
                     numan+=1
                 elif op==("C") and numdias!=0:
