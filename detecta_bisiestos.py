@@ -1,5 +1,5 @@
 from datetime import date
-from VALID import opt, ns, OKI
+from VALID import opt, ns, OKI #IMPORTAMOS FUNCIONES DE "VALID"
 import subprocess
 
 def rang_año():
