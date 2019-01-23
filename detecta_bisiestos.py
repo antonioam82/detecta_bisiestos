@@ -65,7 +65,7 @@ while True:
             print("NO HAY AÑOS")
         if op==("A"):
             print(("Entre %d y %d hay %d años bisiestos")%(rang[0],rang[1],numan))
-    conti=ns(input("¿Desa continuar?: "))
+    conti=ns(input("¿Desea continuar?: "))
     if conti==("n"):
         break
     subprocess.call(["cmd.exe","/C","cls"])
